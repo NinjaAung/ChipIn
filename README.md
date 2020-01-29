@@ -1,19 +1,43 @@
-# ChipIn
+<h1 align="center">ChipIn</h1>
+<p>
+  <img alt="Version" src="https://img.shields.io/badge/version-0.0.1-blue.svg?cacheSeconds=2592000" />
+  <a href="#" target="_blank">
+    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
+  </a>
+</p>
 
-description + (Logo if made)
+> A mutal fund for donation. Creating an easier way to invest in our collective future.
+## Install
 
-## Table of content
+```sh
+git clone https://github.com/NinjaAung/ChipIn
+```
 
-*
+## Live
+[ChipIn]()
 
-## Information 
 
-*
+## 💼 Documentation
+[Trello](https://trello.com/b/qgiBQwjY/chipin)
 
-## Creators
 
-*
+## 👤 Authors
 
-## Links
+**Nyein Chan Aung**
 
-* Heroku deployment 
+* Github: [@NinjaAung](https://github.com/NinjaAung)
+
+**Alexander Gray**
+* Github: [@adgray09](https://github.com/adgray09)
+
+**Khdir Binkly**
+* Github: [@NinjaAung](https://github.com/NinjaAung)
+
+**Luke Parker**
+* Github: [@lukeaparker](https://github.comlukeaparker)
+
+**Deer Brinkley**
+* Github: [@Deer5000](https://github.com/Deer5000)
+
+## 🤝 Contributing Guidelines
+Always check the [issue page]((https://github.com/NinjaAung/nere/issues)) and refer back to the [contributing guide](https://github.com/NinjaAung/nere/blob/master/CONTRIBUTING.md).
