@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
+      {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'dashboard/styles.css'%}">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="{% static 'js/app.js' %}"></script>
+    <title>chipin</title>
+  </head>
+  <body>
+
+<!-- Horizontal navbar that becomes vertical on small screens -->
+<nav class="navbar">
+        <a class="navbar-brand" href="#">chipin</a>
+        <ul class="nav navbar-nav navbar-right">
+            <form>
+                {% if request.user.is_authenticated %}
+                <a href="{% url 'logout' %}" class="btn btn-danger ml-2">logout</a>
+                {% else %}
+                    <a href="{% url 'signup' %}" class="">signup</a>
+                    <a href="{% url 'login' %}" class="btn btn-secondary ml-2">login</a>
+                    {% endif %}
+            </form>
+        </nav>
+
+    <main role="main" class="container" style="margin-top: 4vh;">
+      {% block content %}
+        <div class="row">
+          <div class="col m-4">
+            <div class="alert alert-warning" role="alert">
+              If you see this, you forgot <code>{% verbatim %}{% block content %}{% endblock %}{% endverbatim %}</code> in your child template.
+            </div>
+          </div>
+        </div>
+      {% endblock %}
+    </main>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+  </body>
+
+
+
+
+
+
+
