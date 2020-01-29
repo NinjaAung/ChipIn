@@ -15,6 +15,9 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+# Where to redirect during authentication
+LOGIN_REDIRECT_URL = "/portfolio"
+LOGOUT_REDIRECT_URL = "/"
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
@@ -39,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'landing',
     'accounts',
+    'portfolio'
 ]
 
 MIDDLEWARE = [

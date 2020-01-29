@@ -1,0 +1,14 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="d-flex justify-content-between">
+    {% csrf_token %}
+    <h2>Portfolio</h2>
+</div>
+<hr />
+    {% if causes %}
+    <div class="card-columns">
+        {% for cause in causes %} {% include "partials/cause_card.html" %} {% endfor %}
+    </div>
+{% else %}
+<div class="alert alert-primary" role="alert"></div>
+{% endif %} {% endblock %}
