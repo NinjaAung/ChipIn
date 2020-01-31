@@ -30,14 +30,11 @@ git clone https://github.com/NinjaAung/ChipIn
 **Alexander Gray**
 * Github: [@adgray09](https://github.com/adgray09)
 
-**Khdir Binkly**
-* Github: [@NinjaAung](https://github.com/NinjaAung)
+**Khidr Brinkley**
+* Github: [@Deer5000](https://github.com/Deer5000)
 
 **Luke Parker**
-* Github: [@lukeaparker](https://github.comlukeaparker)
-
-**Deer Brinkley**
-* Github: [@Deer5000](https://github.com/Deer5000)
+* Github: [@lukeaparker](https://github.com/lukeaparker)
 
 ## 🤝 Contributing Guidelines
 Always check the [issue page]((https://github.com/NinjaAung/nere/issues)) and refer back to the [contributing guide](https://github.com/NinjaAung/nere/blob/master/CONTRIBUTING.md).
