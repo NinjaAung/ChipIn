@@ -2,7 +2,10 @@ from django.shortcuts import render
 from django.contrib.auth import login, authenticate
 from accounts.forms import SignUpForm
 from django.shortcuts import render, redirect
+from django.views.generic import CreateView
 
+def profile_view(request):
+    return render(request, 'profile.html')
 
 def signup_view(request):
     form = SignUpForm(request.POST)
@@ -21,3 +24,8 @@ def signup_view(request):
     else:
         form = SignUpForm()
     return render(request, 'signup.html', {'form': form})
+
+def get(self, request):
+    """ returns landing page. """
+    return render(request, 'profile.html')
+
