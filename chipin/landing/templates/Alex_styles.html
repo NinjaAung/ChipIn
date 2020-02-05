@@ -1,94 +1,62 @@
 <!DOCTYPE html>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <head>
-  
-  <div class="topnav">
-    <div onclick="myFunction(this)">
-      <a><div class="bar1"></div>
-      <div class="bar2"></div>
-      <div class="bar3"></div></a>
+  <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+  <nav class="navbar navbar-expand-lg navbar-light " style="background-color: rgb(137, 184, 245)">
+    <a class="navbar-brand" href="#">Logo</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+      <form class="form-inline">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+      <form class="form-inline my-2 my-lg-0">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Signup/Login</a>
+          </li>
+      </form>
     </div>
-    <a href="#news">News</a>
-    <a href="#contact">Contact</a>
-    <a href="#about">About</a>
-    </div>
-
-  <script>
-  function myFunction(x) {
-    x.classList.toggle("change");
-  }
-  </script>
-
-<style>
-.topnav {
-  background-color: white;
-  overflow: hidden;
-}
-
-.reee {
-  width: 35px;
-  height: 5px;
-  background-color: black;
-  margin: 6px 0;
-}
-
-/* Style the links inside the navigation bar */
-.topnav a {
-  float: left;
-  color: black;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-/* Change the color of links on hover */
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-/* Add a color to the active/current link */
-.topnav a.active {
-  background-color: #4CAF50;
-  color: white;
-}
-
-.container {
-  display: inline-block;
-  cursor: pointer;
-}
-
-.bar1, .bar2, .bar3 {
-  width: 35px;
-  height: 5px;
-  background-color: #333;
-  margin: 6px 0;
-  transition: 0.4s;
-}
-
-/* Rotate first bar */
-.change .bar1 {
-  -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
-  transform: rotate(-45deg) translate(-9px, 6px) ;
-}
-
-/* Fade out the second bar */
-.change .bar2 {
-  opacity: 0;
-}
-
-/* Rotate last bar */
-.change .bar3 {
-  -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
-  transform: rotate(45deg) translate(-8px, -8px) ;
-}
-
-</style>
+  </nav>
 </head>
 
 <body>
-  
-  </body>
+  <div class="container mt-5 border border-dark">
+  <div id="carouselExampleSlidesOnly" class="carousel slide" style="width: 80%; height: 60%; margin-left: auto; margin-right: auto;" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="d-block w-100" src="/Users/alexstraphouse/Downloads/2017 new members america's charities.png
+        " alt="First slide">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="/Users/alexstraphouse/Downloads/DONATE_button2.jpg" alt="Second slide">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="/Users/alexstraphouse/Downloads/Donate-Button.jpg " alt="Third slide">
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="container mt-5">
+    <h1 style="text-align: center;">
+      Call to Action
+    </h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tincidunt augue id quam convallis mattis. Nullam lobortis vitae lacus non finibus. Suspendisse laoreet lacus non commodo tincidunt. Quisque vitae rutrum urna. Morbi porta lectus diam, quis porta sem accumsan sit amet. Aenean vel justo ut dolor porttitor consectetur. Phasellus nec lectus eget lacus tempus semper non at felis. In vitae ante justo. Vestibulum sodales turpis non efficitur dictum. Morbi pharetra, justo nec posuere condimentum, massa sapien dignissim quam, et dictum lorem ex vitae est. Vivamus quis lobortis odio. Nam ultricies mauris magna, pellentesque ultricies nibh tempus ut.
 
+Ut eleifend ante eu pellentesque lobortis. Aliquam dictum sapien est, rhoncus consectetur leo porta ac. Etiam ultrices commodo urna vitae dapibus. Maecenas tincidunt, urna vitae finibus maximus, enim odio ornare purus, ultrices porta lacus augue nec erat. Fusce scelerisque tempus turpis condimentum condimentum. Curabitur a ornare magna. Phasellus fringilla commodo nulla quis elementum. Quisque hendrerit nulla mi, eu dictum sapien dignissim ac. Praesent quis lorem elementum, commodo lacus quis, scelerisque metus. Phasellus dui orci, bibendum sed euismod non, auctor et metus. Cras lacinia sem et tincidunt aliquam. Ut auctor gravida magna a pretium. Mauris dignissim dapibus sem, quis tincidunt nisl vulputate sed. Nullam porta dignissim urna, a rhoncus est lobortis ac. Aliquam tellus lacus, consequat eu diam eget, posuere vulputate neque.
+
+Praesent dictum sodales elit. Integer ante dui, commodo sed luctus euismod, molestie ut augue. In in placerat metus. Nunc egestas justo eget pretium ullamcorper. Nunc lorem leo, luctus eu varius eget, efficitur sit amet dui. Etiam et condimentum sem. In hac habitasse platea dictumst. Fusce vel ex suscipit, molestie lorem vel, iaculis orci. Aenean dictum pharetra turpis, id sodales arcu eleifend sed. In hac habitasse platea dictumst. Aenean pharetra maximus viverra. Sed et laoreet enim, id bibendum nulla. Nulla accumsan, enim sed.
+    </p>
+  </div>
 </body>
