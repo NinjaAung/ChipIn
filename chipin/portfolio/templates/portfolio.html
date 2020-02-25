@@ -2,13 +2,28 @@
 
 <div class="d-flex justify-content-between">
     {% csrf_token %}
-    <h2>Portfolio</h2>
-</div>
-<hr />
-    {% if causes %}
-    <div class="card-columns">
-        {% for cause in causes %} {% include "partials/cause_card.html" %} {% endfor %}
-    </div>
-{% else %}
-<div class="alert alert-primary" role="alert"></div>
-{% endif %} {% endblock %}
+        {% if request.user.profile.onboarded == 'False' %}
+        <div style="background:transparent !important" class="jumbotron">
+        <h2 class="display-4">Setup your profile to start donating!</h2>
+        <hr class="my-4">
+        <p class="lead">
+            <a class="btn btn-primary btn-lg" href="{% url 'update_profile' user.id user.username %}" role="button">Learn more</a>
+        </p>
+        </div>
+        {% else %}
+            <h2>Portfolio</h2>
+            {% if causes %}
+            <div class="card-columns">
+                {% for cause in causes %} {% include "partials/cause_card.html" %} {% endfor %}        
+            {% endif %}
+                </div>
+                <div class="alert alert-primary" role="alert"></div>
+        {% endif %} {% endblock %}
+
+
+
+
+
+
+
+

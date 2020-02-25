@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h3>Select your values<small class="text-muted"></small></h3>
+  <h3>Sign Up <small class="text-muted"></small></h3>
   <hr>
       <div class="row">
         <div class="col">
-          <form method="post" class="mx-auto">
+          <form method="post" class="mx-auto" >
             {% csrf_token %}
             {% for field in form %}
                 {% for error in field.errors %}

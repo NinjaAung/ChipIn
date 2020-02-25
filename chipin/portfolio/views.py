@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.urls import reverse_lazy
 from portfolio.models import Cause
-from accounts.models import Value
+from accounts.models import Profile
 import requests
 import random 
 import json
@@ -9,10 +9,11 @@ from django.http import HttpResponseRedirect
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.contrib.auth.models import User
+from django.contrib.auth.mixins import LoginRequiredMixin
+from accounts.models import Profile
 
 
-
-class PortfolioView(ListView):
+class PortfolioView(LoginRequiredMixin, ListView):
     """ Renders a list of all Pages. """
     model = Cause
    
@@ -22,7 +23,9 @@ class PortfolioView(ListView):
         return render(request, 'portfolio.html', {
           'causes': causes
         })
-class CauseDetailView(DetailView):
+    
+   
+class CauseDetailView(LoginRequiredMixin, DetailView):
   model = Cause
   template_name = 'cause_detail.html'
 
