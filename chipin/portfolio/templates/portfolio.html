@@ -2,22 +2,31 @@
 
 <div class="d-flex justify-content-between">
     {% csrf_token %}
-        {% if request.user.profile.onboarded == 'False' %}
+        {% if request.user.profile.monthly_donation == 0.00 %}
+        <div style="background:transparent !important" class="jumbotron">
+        <h2 class="display-4">Setup Payments to Start Donating</h2>
+        <hr class="my-4">
+        <p class="lead">
+            <a class="btn btn-primary btn-lg" href="{% url 'update_profile' user.pk user.username %}" role="button">Learn more</a>
+        </p>
+        </div>
+        {% endif %}
+        {% if profile_values|length == 0 %}
         <div style="background:transparent !important" class="jumbotron">
         <h2 class="display-4">Setup your profile to start donating!</h2>
         <hr class="my-4">
         <p class="lead">
-            <a class="btn btn-primary btn-lg" href="{% url 'update_profile' user.id user.username %}" role="button">Learn more</a>
+            <a class="btn btn-primary btn-lg" href="{% url 'create_value' %}" role="button">Learn more</a>
         </p>
         </div>
-        {% else %}
-            <h2>Portfolio</h2>
-            {% if causes %}
-            <div class="card-columns">
-                {% for cause in causes %} {% include "partials/cause_card.html" %} {% endfor %}        
-            {% endif %}
-                </div>
-                <div class="alert alert-primary" role="alert"></div>
+        {% endif %}
+
+        <h2>Portfolio</h2>
+        {% if causes %}
+        <div class="card-columns">
+            {% for cause in causes %} {% include "partials/cause_card.html" %} {% endfor %}        
+            </div>
+            <div class="alert alert-primary" role="alert"></div>
         {% endif %} {% endblock %}
 
 

@@ -10,18 +10,21 @@ from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.contrib.auth.models import User
 from django.contrib.auth.mixins import LoginRequiredMixin
-from accounts.models import Profile
+from accounts.models import Profile, Value
 
 
 class PortfolioView(LoginRequiredMixin, ListView):
     """ Renders a list of all Pages. """
     model = Cause
-   
+
     def get(self, request):
         """ GET a list of Pages. """
-        causes = self.get_queryset().all()
+        causes = self.get_queryset().all()     
+        profile_values = Value.objects.filter(user=request.user)
+        
         return render(request, 'portfolio.html', {
-          'causes': causes
+          'causes': causes,
+          'profile_values': profile_values
         })
     
    

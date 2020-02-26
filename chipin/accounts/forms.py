@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from accounts.models import Profile
+from accounts.models import Profile, Value
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 from django.forms import ModelForm
@@ -24,6 +24,15 @@ class SetupProfileForm(ModelForm):
     class Meta:
          model = Profile
          fields = ('monthly_donation',)
+
+class CreateValueForm(ModelForm):
+    title = forms.CharField(max_length=100, help_text='value')
+     
+    class Meta:
+         model = Value
+         fields = ('title',)
+
+
 
 
 
