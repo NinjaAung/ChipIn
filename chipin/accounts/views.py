@@ -20,18 +20,6 @@ class SignUpView(CreateView):
     success_url = reverse_lazy('login')
     template_name = 'registration/signup.html'
 
-# class CreateValueView(CreateView):
-#     model = Value
-    # template_name = 'create_value.html'
-    # form_class = CreateValueForm
-    # success_url = reverse_lazy('portfolio')
-
-    # def form_valid(self, form_class):
-    #     value = form_class.save(commit=False)
-    #     value.user = self.request.user
-    #     #article.save()  # This is redundant, see comments.
-    #     return super(CreateValueView, self).form_valid(form_class)
-    
 class CreateMonthlyDonationView(CreateView):
     model = MonthlyDonation
     template_name = 'update_profile.html'
@@ -39,38 +27,9 @@ class CreateMonthlyDonationView(CreateView):
     success_url = reverse_lazy('portfolio')
 
     def form_valid(self, form_class):
-        monthly_donation = form_class.save(commit=False)
-        monthly_donation.user = self.request.user
+        monthlydonation = form_class.save(commit=False)
+        monthlydonaton.user = self.request.user
         return super(CreateMonthlyDonationView, self).form_valid(form_class)
-    
-
-
-# class CreateValueView(FormView):
-#     template_name = 'create_value.html'
-#     form_class = ExpenseForm
-#     success_url = reverse_lazy('portfolio')
-
-#     def post(self, request, *args, **kwargs):
-
-#         form = ExpenseForm(request.POST)
-#         if form.is_valid():
-#             data = request.POST.copy()
-#             value = data.getlist('value')
-#             value = value[0]
-#             print(value)
-#             value = Value(user=request.user, value=value)
-#             value.save()
-#             return HttpResponseRedirect(reverse('portfolio'))
-
-
-
-        
-
-
-    
-    
-
-    
         
 class UpdateProfileView(UpdateView):
     model = Profile 
@@ -78,14 +37,10 @@ class UpdateProfileView(UpdateView):
     template_name = 'update_profile.html'
     success_url = reverse_lazy('portfolio')
 
-    # def get_object(self, )
-
-
 class DetailProfileView(DetailView):
     model = Profile
     template_name = 'detail_profile.html'
 
-   
 
     def get(self, request, slug):
       """ Returns a specific wiki page by slug. """

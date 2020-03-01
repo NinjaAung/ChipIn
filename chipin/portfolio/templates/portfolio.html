@@ -2,25 +2,6 @@
 
 <div class="d-flex justify-content-between">
     {% csrf_token %}
-        {% if request.user.profile.monthly_donation == 0.00 %}
-        <div style="background:transparent !important" class="jumbotron">
-        <h2 class="display-4">Setup Payments to Start Donating</h2>
-        <hr class="my-4">
-        <p class="lead">
-            <a class="btn btn-primary btn-lg" href="{% url 'update_profile' user.pk user.username %}" role="button">Learn more</a>
-        </p>
-        </div>
-        {% endif %}
-        {% if profile_values|length < 3 %}
-        <div style="background:transparent !important" class="jumbotron">
-        <h2 class="display-4">Setup your profile to start donating!</h2>
-        <hr class="my-4">
-        <p class="lead">
-            <a class="btn btn-primary btn-lg" href="{% url 'create_value' %}" role="button">Learn more</a>
-        </p>
-        </div>
-        {% endif %}
-
         <h2>Portfolio</h2>
         {% if causes %}
         <div class="card-columns">

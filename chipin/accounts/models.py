@@ -19,15 +19,16 @@ class Profile(models.Model):
 
 class MonthlyDonation(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='user_donation')
-    monthly_donation = models.DecimalField(max_digits=8, decimal_places=2, default=0.00)
+    amount = models.DecimalField(max_digits=8, decimal_places=2, default=0.00)
 
     def __str__(self):
-            return self.user.username + '_donation_amount'
-
+        return str(self.amount)
+    
+    
     def save(self, *args, **kwargs):
         """ Creates a URL safe slug automatically when a new a page is created. """
         if not self.pk:
-            self.slug = slugify(MonthlyDonation.monthly_donation, allow_unicode=True)
+            self.slug = slugify(MonthlyDonation.amount, allow_unicode=True)
         return super(MonthlyDonation, self).save(*args, **kwargs)
     
 @receiver(post_save, sender=User)

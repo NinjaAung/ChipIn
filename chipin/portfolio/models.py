@@ -8,6 +8,9 @@ from django.contrib.auth.models import User
 
 class Cause(models.Model):
     title = models.CharField(max_length=100)
+    category = models.CharField(max_length=100)
+
+
 
     def get_absolute_url(self):
         return reverse('cause_detail', args=[str(self.id)])
