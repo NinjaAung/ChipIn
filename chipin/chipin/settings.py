@@ -29,8 +29,7 @@ SECRET_KEY = 'rzfpm*1&kb-#i&5c1neftzo%-r-c#4cue(8!d9now@1aj_hv(!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['localhost', 'chipinvest.herokuapp.com']
 
 # Application definition
 
