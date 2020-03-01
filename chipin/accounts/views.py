@@ -28,7 +28,7 @@ class CreateMonthlyDonationView(CreateView):
 
     def form_valid(self, form_class):
         monthlydonation = form_class.save(commit=False)
-        monthlydonaton.user = self.request.user
+        monthlydonation.user = self.request.user
         return super(CreateMonthlyDonationView, self).form_valid(form_class)
         
 class UpdateProfileView(UpdateView):

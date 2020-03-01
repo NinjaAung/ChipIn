@@ -15,6 +15,8 @@ from django.shortcuts import render, get_object_or_404, get_list_or_404, reverse
 from value.models import Value
 import math
 import random
+from itertools import chain
+
 
 class PortfolioView(LoginRequiredMixin, ListView):
     """ Renders a list of all Pages. """
@@ -36,13 +38,13 @@ class PortfolioView(LoginRequiredMixin, ListView):
             category_list.append(value)
           donation_amount = float(amount) * 0.10
           category = random.choice(category_list)
-          causes = []
           for i in range(10):
             category = random.choice(category_list)
             cause = self.get_queryset().filter(category=category)[:1]
-            causes.append(cause)
+            result_list = list(chain(cause))
+          print(result_list)
+
           return render(request, 'portfolio.html', {
-            'causes': causes
         })
     
 class CauseDetailView(LoginRequiredMixin, DetailView):

@@ -7,8 +7,17 @@ from django.contrib.auth.models import User
 
 
 class Cause(models.Model):
-    title = models.CharField(max_length=100)
+    organization_name = models.CharField(max_length=100)
+    link = models.CharField(max_length=100)
+    address = models.CharField(max_length=100)
+    description = models.CharField(max_length=100)
     category = models.CharField(max_length=100)
+
+
+
+
+
+
 
 
 
@@ -16,4 +25,4 @@ class Cause(models.Model):
         return reverse('cause_detail', args=[str(self.id)])
 
     def __str__(self):
-        return f'{self.title}'
+        return f'{self.organization_name}'

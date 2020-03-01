@@ -5,7 +5,11 @@
         <h2>Portfolio</h2>
         {% if causes %}
         <div class="card-columns">
-            {% for cause in causes %} {% include "partials/cause_card.html" %} {% endfor %}        
+            {% for cause in causes %} {% include "partials/cause_card.html" %} 
+                {% for obj in QuerySet %}
+                    <h1>hello</h1>
+                {% endfor %}        
+            {% endfor %}        
             </div>
             <div class="alert alert-primary" role="alert"></div>
         {% endif %} {% endblock %}
