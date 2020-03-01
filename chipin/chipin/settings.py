@@ -31,8 +31,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['localhost', 'chipinvest.herokuapp.com']
 
-STATIC_ROOT = os.path.join(BASE_DIR, ‘static’)
-
 # Application definition
 
 INSTALLED_APPS = [
