@@ -4,8 +4,12 @@
     {{ cause.category }}
     </div>
     <div class="card-body">
-      <h5 class="card-title">{{ cause.name }}</h5>
-      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+      <h5 class="card-title">{{ cause.organization_name }}</h5>
+      <h5 class="card-title">{{ cause.address }}</h5>
+      <h5 class="card-title">{{ cause.description }}</h5>
+      <a href="{{ cause.link }}" class="btn btn-danger ml-2">see details</a>
+
+
     </div>
   </div>
   

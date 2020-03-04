@@ -12,6 +12,19 @@ class Cause(models.Model):
     address = models.CharField(max_length=100)
     description = models.CharField(max_length=100)
     category = models.CharField(max_length=100)
+    
+
+    def save(self, *args, **kwargs):
+        """ Creates a URL safe slug automatically when a new a page is created. """
+        if not self.pk:
+            self.slug = slugify(Cause.organization_name, allow_unicode=True)
+        return super(Cause, self).save(*args, **kwargs)
+    
+    def get_absolute_url(self):
+        """ Returns a fully-qualified path for a page (/my-new-value-page). """
+        path_components = {'slug': self.slug}
+        return reverse('cause_detail', kwargs=path_components)
+
 
 
 
@@ -25,4 +38,4 @@ class Cause(models.Model):
         return reverse('cause_detail', args=[str(self.id)])
 
     def __str__(self):
-        return f'{self.organization_name}'
+        return f'{self.organization_name}' + ' ' + self.category

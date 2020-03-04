@@ -22,6 +22,20 @@ class PortfolioView(LoginRequiredMixin, ListView):
     """ Renders a list of all Pages. """
     model = Cause
 
+    def generate_portfolio(self, request):
+      profile_values = Value.objects.filter(user=request.user).values('value')
+      category_list = []
+      for value in profile_values:
+        value = value.get('value')
+        category_list.append(value)
+      print(profile_values)
+      
+      print(category_list)
+      causes = self.get_queryset().filter(category__in=category_list)
+      return causes
+      
+
+
     def get(self, request):
         """ GET a list of Pages. """
         profile_values = Value.objects.filter(user=request.user).values('value')
@@ -32,20 +46,28 @@ class PortfolioView(LoginRequiredMixin, ListView):
           return HttpResponseRedirect(reverse('create_monthly_donation'))
         else: 
           amount = monthly_donation.first().get('amount') 
-          category_list = []
-          for value in profile_values:
-            value = value.get('value')
-            category_list.append(value)
-          donation_amount = float(amount) * 0.10
-          category = random.choice(category_list)
-          for i in range(10):
-            category = random.choice(category_list)
-            cause = self.get_queryset().filter(category=category)[:1]
-            result_list = list(chain(cause))
-          print(result_list)
-
+          causes = self.generate_portfolio(request)
+          print(causes)
           return render(request, 'portfolio.html', {
-        })
+            'causes': causes
+          })
+
+
+
+
+          
+
+          
+
+
+
+          
+          # # cause1 = self.get_queryset().filter(category=random.choice(category_list))
+          # cause1 = self.get_queryset().filter(category='Government Accountability')
+
+               
+
+      
     
 class CauseDetailView(LoginRequiredMixin, DetailView):
   model = Cause
