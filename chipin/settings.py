@@ -30,7 +30,7 @@ SECRET_KEY = 'rzfpm*1&kb-#i&5c1neftzo%-r-c#4cue(8!d9now@1aj_hv(!'
 DEBUG = True
 
 
-ALLOWED_HOSTS = ['localhost', 'chipinvest.herokuapp.com']
+ALLOWED_HOSTS = ['localhost', 'chipin-main.herokuapp.com']
 
 # Application definition
 
