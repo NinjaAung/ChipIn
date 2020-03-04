@@ -1,0 +1,1 @@
+web: gunicorn chipin-main.wsgi —-log-file -
